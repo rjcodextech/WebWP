@@ -63,12 +63,12 @@ function get_next_post_link_url()
     return $next_post ? get_permalink($next_post->ID) : '';
 }
 
-
 function webwp_breadcrumb()
 {
     if (!is_front_page()) {
         // Settings
         $separator = ' &gt; ';
+        $category_separator = ' / ';
         $home_title = 'Home';
 
         // Get the current post type
@@ -83,7 +83,7 @@ function webwp_breadcrumb()
                 // Fetch all categories for the post and add each to the breadcrumb
                 $categories = get_the_category();
                 if ($categories) {
-                    foreach ($categories as $category) {
+                    foreach ($categories as $key => $category) {
                         $breadcrumbs[] = '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a>';
                     }
                 }
@@ -103,13 +103,17 @@ function webwp_breadcrumb()
             echo '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
             echo $breadcrumb;
             echo '<meta itemprop="position" content="' . ($key + 1) . '" /></li>';
+
+            // Check if the next item is a category to use the slash separator
             if ($key < count($breadcrumbs) - 1) {
-                echo '<li class="separator">' . $separator . '</li>';
+                $next_is_category = ($key > 0 && isset($categories) && $key < count($categories));
+                echo '<li class="separator">' . ($next_is_category ? $category_separator : $separator) . '</li>';
             }
         }
         echo '</ul> <span class="separator" >&nbsp;</span>';
     }
 }
+
 
 
 

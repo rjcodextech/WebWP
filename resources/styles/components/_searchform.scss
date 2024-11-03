@@ -1,0 +1,31 @@
+.searchform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+    border: 1px solid $primary;
+    padding: 5px;
+    background-color: $bgColor;
+    input[type="text"] {
+        border: none;
+        padding: 1rem;
+        flex-grow: 1;
+        outline: none;
+        font-size: $baseSize;
+    }
+    button {
+        border: none;
+        background-color: $primary; /* WordPress blue */
+        color: #fff;
+        padding: 1rem 1.5rem;
+        font-size: $baseSize;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    &:hover {
+        border-color: $secondary;
+        button {
+            background-color: $secondary;
+        }
+    }
+}

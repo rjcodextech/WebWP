@@ -19,13 +19,11 @@
 @import "base/widgets";
 @import "article/typo";
 
+
+
+
 .article-thumbnail {
     margin-bottom: 2rem;
-}
-.article-meta {
-    display: block;
-    width: 100%;
-    padding: 1rem 0;
 }
 
 .article-nav {
@@ -85,4 +83,38 @@
             }
         }
     }
+}
+
+/* Container styling for tags */
+.tags_post {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between tags */
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+/* Styling for each tag link */
+.tags_post li a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: $bgColor;
+    color: $baseColor;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* Hover effect for tag links */
+.tags_post li a:hover {
+    background-color: $primary; /* WordPress blue */
+    color: #fff;
+}
+
+/* Optional styling for active tags */
+.tags_post li a[rel="tag"]:active {
+    background-color: #005177;
+    color: #fff;
 }

@@ -1,15 +1,25 @@
-<?php get_header(); ?>
+<?php
+/*
+|-----------------------------------------------------------
+| Blog Page Template
+|-----------------------------------------------------------
+|
+| This file is used for rendering blog page
+|
+*/
 
-<section class="webwp--banner">
-    <div class="container">
-        <h1>Blog</h1>
-        <?php webwp_breadcrumb(); ?>
-    </div>
-</section>
+get_header();
+?>
+
 <?php if (have_posts()) : ?>
-    <!-- Blog Listing -->
     <section class="webwp--grids grid-3-block">
         <div class="container">
+            <div class="row">
+                <div class="inner-header">
+                    <h1><?php _e('Blog', 'webwp'); ?></h1>
+                </div>
+            </div>
+
             <div class="row">
 
                 <?php while (have_posts()) : the_post() ?>

@@ -1,12 +1,21 @@
 <?php
-if ( post_password_required() ) {
+/*
+|-----------------------------------------------------------
+| Comments Template
+|-----------------------------------------------------------
+|
+| This file is used for rendering blog post comments
+|
+*/
+
+if (post_password_required()) {
     return;
 }
 ?>
 
 <div id="comments" class="comments-area">
 
-    <?php if ( have_comments() ) : ?>
+    <?php if (have_comments()) : ?>
         <h2 class="comments-title">
             <?php
             printf(
@@ -28,15 +37,17 @@ if ( post_password_required() ) {
 
         <?php the_comments_navigation(); ?>
 
-    <?php endif; // Check for comments. ?>
+    <?php endif; // Check for comments. 
+    ?>
 
     <?php comment_form(); ?>
 
 </div>
 
 <?php
-function webwp_comments($comment, $args, $depth) {
-    ?>
+function webwp_comments($comment, $args, $depth)
+{
+?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
         <div class="comment-meta">
             <?php echo get_avatar($comment, 48); ?>
@@ -55,6 +66,6 @@ function webwp_comments($comment, $args, $depth) {
             ?>
         </div>
     </li>
-    <?php
+<?php
 }
 ?>

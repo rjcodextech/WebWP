@@ -1,3 +1,13 @@
+<?php
+/*
+|-----------------------------------------------------------
+| Footer Template
+|-----------------------------------------------------------
+|
+| This file is used for rendering site footer
+|
+*/
+?>
 <footer class="site-footer">
     <div class="container">
         <div class="row">

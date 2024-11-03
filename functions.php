@@ -1,4 +1,12 @@
 <?php
+/*
+|-----------------------------------------------------------
+| Functions
+|-----------------------------------------------------------
+|
+| This file is used for rendering all hooks and custom functions
+|
+*/
 
 if (!defined('WEBWP_THEME_URL')) :
     define('WEBWP_THEME_URL', trailingslashit(get_template_directory_uri()));

@@ -12,14 +12,15 @@ get_header();
 
 if (have_posts()) :
 ?>
-  <section class="webwp--banner">
-    <div class="container">
-      <h1><?php the_title(); ?></h1>
-      <?php webwp_breadcrumb(); ?>
-    </div>
-  </section>
   <section class="webwp--page">
     <div class="container">
+      <div class="row">
+        <div class="inner-header">
+          <?php webwp_breadcrumb(); ?>
+          <h1><?php the_title(); ?></h1>
+        </div>
+      </div>
+      <!-- /.row -->
       <div class="entry-content"> <?php the_content(); ?></div>
       <div class="page-links">
         <?php

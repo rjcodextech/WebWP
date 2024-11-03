@@ -86,9 +86,6 @@ function webwp_add_theme_supports()
 
     // Add support for experimental link color control.
     add_theme_support('experimental-link-color');
-
-    add_theme_support('custom-background');
-    add_theme_support('custom-header');
 }
 add_action('after_setup_theme', 'webwp_add_theme_supports');
 

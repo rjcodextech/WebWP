@@ -65,29 +65,30 @@
     }
 }
 
-.article-primary {
-    @include column();
-    flex: 0 0 100%;
-    max-width: 100%;
+.post-sidebar {
+    .article-primary {
+        @include column();
+        flex: 0 0 100%;
+        max-width: 100%;
 
-    @include respond-to("tablet") {
-        flex: 0 0 75%;
-        max-width: 75%;
+        @include respond-to("tablet") {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
     }
 
-    padding-left: 0px !important;
-}
+    .article-sidebar {
+        @include column();
+        flex: 0 0 100%;
+        max-width: 100%;
 
-.article-sidebar {
-    @include column();
-    flex: 0 0 100%;
-    max-width: 100%;
-
-    @include respond-to("tablet") {
-        flex: 0 0 25%;
-        max-width: 25%;
+        @include respond-to("tablet") {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
     }
 }
-.article-comments{
+
+.article-comments {
     width: 100%;
 }

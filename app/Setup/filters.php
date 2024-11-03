@@ -10,9 +10,18 @@
 | of different parts of WordPress functions.
 |
 */
+// Add specific CSS class by filter.
+
+add_filter('body_class', function ($classes) {
+    if (is_active_sidebar('blog-sidebar') && is_single()) :
+        $classes = array_merge($classes, array('post-sidebar'));
+    endif;
+
+    return $classes;
+});
 
 /**
- * Shortens posts excerpts to 60 words.
+ * Shortens posts excerpts to 20 words.
  *
  * @return integer
  */

@@ -1,17 +1,24 @@
-<?php get_header(); ?>
-
-<section class="webwp--banner">
-    <div class="container">
-        <h1><?php _e('Search results for:', 'webwp'); ?><small><?php echo get_search_query(); ?></small> </h1>
-        <?php webwp_breadcrumb(); ?>
-    </div>
-</section>
+<?php
+/*
+|-----------------------------------------------------------
+| Search Page Template
+|-----------------------------------------------------------
+|
+| This file is used for rendering search result page
+|
+*/
+get_header();
+?>
 <?php if (have_posts()) : ?>
-    <!-- Blog Listing -->
+
     <section class="webwp--grids grid-3-block">
         <div class="container">
             <div class="row">
-
+                <div class="inner-header">
+                    <h1><?php _e('Search results for:', 'webwp'); ?><small><?php echo get_search_query(); ?></small> </h1>
+                </div>
+            </div>
+            <div class="row">
                 <?php while (have_posts()) : the_post() ?>
                     <article class="grid-item">
                         <a href="<?php echo get_permalink(); ?>" class="grid-item-inner">
@@ -40,20 +47,22 @@
         </div>
     </section>
 <?php else : ?>
-
-    <section id="post-0" class="post no-results pt-80 pb-80 not-found">
+    <section class="page-not-found">
         <div class="container">
-            <header class="entry-header">
-                <h1 class="entry-title"><?php _e('Nothing Found', 'webwp'); ?></h1>
-            </header>
-
-            <div class="entry-content">
-                <p><?php _e('Apologies, but no results were found. Perhaps searching will help find a related post.', 'webwp'); ?></p>
-                <?php get_search_form(); ?>
-            </div><!-- .entry-content -->
+            <div id="main">
+                <div class="fof">
+                    <h1><?php _e('Nothing Found', 'webwp'); ?></h1>
+                    <p><?php _e('Apologies, but no results were found. Perhaps searching will help find a related post.', 'webwp'); ?></p>
+                    <div class="search-wrapper">
+                        <?php get_search_form(); ?>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a href="<?php echo home_url('/'); ?>" class="btn">Go to Homepage</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section><!-- #post-0 -->
-
+    </section>
 <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -1,17 +1,17 @@
-.webwp--banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 2rem 0px;
-    background-color: $primary;
-    height: 200px;
-    flex-direction: column;
-    h1 {
-        display: inline-block;
-        color: $white;
-    }
-}
+// .webwp--banner {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//     padding: 2rem 0px;
+//     background-color: $primary;
+//     height: 200px;
+//     flex-direction: column;
+//     h1 {
+//         display: inline-block;
+//         color: $white;
+//     }
+// }
 .webwp--page {
     .entry-content {
         padding: 5rem 0px;
@@ -21,11 +21,14 @@
 }
 
 .webwp--grids {
-    padding: 5rem 0;
+    // padding: 5rem 0;
     .post-title {
         color: $primary;
         font-family: $panton;
         font-weight: 700;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.5;
     }
     .post-info {
         padding: 2rem;
@@ -117,7 +120,7 @@
         li {
             margin-bottom: 1.5em;
             padding: 1em;
-            border: 1px solid ;
+            border: 1px solid;
             border-radius: 5px;
             background-color: $white;
 

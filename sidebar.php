@@ -1,10 +1,12 @@
 <?php
-
-/**
- * Renders sidebar.
- *
- * @see resources/templates/partials/sidebar.tpl.php
- */
+/*
+|-----------------------------------------------------------
+| Sidebar Template
+|-----------------------------------------------------------
+|
+| This file is used for rendering sidebar
+|
+*/
 ?>
 <aside id="secondary" class="widget-area">
     <?php if (is_active_sidebar('blog-sidebar')) : ?>

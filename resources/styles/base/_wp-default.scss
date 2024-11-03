@@ -63,9 +63,20 @@
   li {
     display: inline;
     color: $secondary;
+    text-transform: capitalize;
     a {
       color: $primary;
       text-decoration: none;
     }
+  }
+}
+
+.btn {
+  border: 1px solid $primary;
+  color: $primary;
+  padding: 1rem 2rem;
+  &:hover {
+    border: 1px solid $secondary;
+    color: $secondary;
   }
 }
