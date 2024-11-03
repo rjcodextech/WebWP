@@ -1,0 +1,15 @@
+.site-footer {
+	width: 100%;
+	display: block;
+	background-color: $primary;
+	padding: 1rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	.widget-area {
+		width: 100%;
+		margin-bottom: 2rem;
+		@include respond-to("tablet") {
+			@include column(4);
+		}
+	}
+}

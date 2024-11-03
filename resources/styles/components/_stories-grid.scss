@@ -1,0 +1,105 @@
+/* Stories Grid CSS */
+.stories-grid {
+  margin: 20px 0;
+
+  .story-card {
+    width: 100%;
+    margin: 0 0 2rem;
+
+    @include respond-to("tablet") {
+      @include column(6, "tablet");
+    }
+
+    .story-card-inner {
+      padding: 1rem;
+      border: thin solid #f7f4ea;
+      border-top-right-radius: 1.5rem;
+      display: flex;
+      flex-direction: column-reverse;
+
+      @include respond-to("desktop") {
+        flex-direction: row;
+      }
+    }
+
+    &:nth-child(3n + 1) {
+      .story-card-inner {
+        background-color: $bgColor;
+      }
+    }
+  }
+
+  .story-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: block;
+
+    @include respond-to("desktop") {
+      width: 20rem;
+    }
+  }
+
+  .story-image img {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 1.5rem;
+    object-fit: cover;
+  }
+
+  .story-content {
+    padding: 0 15px 0 5px;
+    width: 100%;
+
+    @include respond-to("desktop") {
+      width: calc(100% - 20rem);
+    }
+  }
+
+  .story-category {
+    @include poppins-style(400);
+
+    font-size: $contentFontSize;
+    color: $black;
+    margin-bottom: 10px;
+    display: block;
+    padding: .8rem 0;
+  }
+
+  .story-heading {
+    @include poppins-style(700);
+    font-size: $baseSize;
+    line-height: 1.6;
+    margin: 0 0 15px;
+  }
+
+  .story-meta {
+    p {
+      font-size: $contentFontSize;
+      margin-bottom: 0;
+      display: block;
+    }
+  }
+
+  .explore-button {
+    text-align: center;
+    margin: 2rem 0 4rem;
+
+    a {
+      width: 100%;
+      max-width: 300px;
+      display: inline-block;
+      padding: 1.2rem;
+      background-color: $primary;
+      color: #fff;
+      border-top-right-radius: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+
+      &:hover {
+        background-color: $secondary;
+        color: $primary;
+      }
+    }
+  }
+}

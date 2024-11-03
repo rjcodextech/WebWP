@@ -1,0 +1,140 @@
+header {
+	width: 100%;
+	background-color: $primary;
+	color: $white;
+
+	.header {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+		height: 100px;
+		padding: 2rem 0;
+		align-items: center;
+		border-bottom: 1px solid $white;
+		.logo {
+			max-width: 160px;
+			@include respond-to('tablet') {
+				max-width: 180px;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: fill;
+			}
+		}
+		.hamburger-menu {
+			display: block;
+			cursor: pointer;
+			.bar {
+				width: 32px;
+				height: 5px;
+				background-color: $white;
+				margin: 5px 0;
+				transition: 0.4s;
+			}
+			&.active .bar:nth-child(1) {
+				transform: rotate(-45deg) translate(-5px, 5px);
+			}
+			&.active .bar:nth-child(2) {
+				opacity: 0;
+			}
+			&.active .bar:nth-child(3) {
+				transform: rotate(45deg) translate(-5px, -5px);
+			}
+
+			@include respond-to('tablet') {
+				display: none;
+			}
+		}
+
+		.site-menu {
+			display: none;
+			@include respond-to('tablet') {
+				display: block;
+			}
+
+			&.active {
+				background: $primary;
+				width: 100%;
+				height: calc(100vh - 100px);
+				z-index: 1;
+				position: fixed;
+				top: 100px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				ul {
+					list-style: none;
+					li {
+						width: 100%;
+						margin-bottom: 2rem;
+						display: block;
+						text-align: center;
+						.nav-link {
+							color: $white;
+							font-family: $poppins;
+							font-size: 2rem;
+							padding: 0 12px;
+							transition: ease-in-out 0.3s;
+							&:hover {
+								color: $secondary;
+							}
+						}
+
+						&.current-menu-item a {
+							color: $secondary;
+						}
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+
+			ul {
+				display: flex;
+				flex-flow: wrap;
+				list-style: none;
+
+				li {
+					position: relative;
+					list-style: none;
+					&:after {
+						content: '';
+						width: 2px;
+						height: 2.1rem;
+						background-color: $white;
+						position: absolute;
+						right: 0;
+					}
+					a {
+						color: $white;
+						font-family: $poppins;
+						font-size: 2rem;
+						padding: 0 12px;
+						transition: ease-in-out 0.3s;
+
+						&:hover {
+							color: $secondary;
+						}
+					}
+					&.current-menu-item a {
+						color: $secondary;
+					}
+					&:last-child {
+						a {
+							padding-right: 0;
+						}
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

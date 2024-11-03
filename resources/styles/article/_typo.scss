@@ -1,0 +1,93 @@
+.article-wrapper,
+.video-wrapper {
+    margin: 2rem 0;
+}
+.entry-container {
+    margin-top: 3rem;
+
+    @include respond-to("tablet") {
+        width: 80%;
+        margin: 3rem auto 0;
+    }
+
+    p,
+    ul li,
+    ol li {
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        line-height: 1.8;
+        letter-spacing: 0.25px;
+        word-spacing: 1.5px;
+
+        a {
+            @include poppins-style(600);
+
+            text-decoration: underline;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-top-right-radius: 1.5rem;
+
+        @include respond-to("tablet") {
+            width: 560px;
+        }
+    }
+
+    figure {
+        margin-bottom: 2rem;
+        border-top-right-radius: 1.5rem;
+        background: $bgColor;
+        text-align: center;
+
+        img {
+            border-top-right-radius: 1.5rem;
+        }
+
+        figcaption {
+            padding: 1.5rem 1rem;
+            font-size: 1.4rem;
+            font-style: italic;
+        }
+    }
+
+    .entry-title {
+        margin: 3rem 0;
+        color: $black;
+
+        @include poppins-style(600);
+    }
+
+    .wp-block-quote {
+        padding-left: 1rem;
+    }
+}
+
+.article-primary {
+    @include column();
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include respond-to("tablet") {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    padding-left: 0px !important;
+}
+
+.article-sidebar {
+    @include column();
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include respond-to("tablet") {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+.article-comments{
+    width: 100%;
+}

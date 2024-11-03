@@ -1,0 +1,38 @@
+.section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 0.1rem solid #f7f4ea;
+  border-bottom: 0.1rem solid #f7f4ea;
+  padding: 0.3rem 0 0.6rem;
+  margin-bottom: 2rem;
+
+  .head-block {
+    display: flex;
+    align-items: center;
+
+    img {
+      opacity: 0.2;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .section-heading {
+    margin: 0;
+    padding-left: 0.5rem;
+    font-size: 2rem;
+
+    @include poppins-style(600);
+
+    @include respond-to("desktop") {
+      font-size: 2.5rem;
+    }
+  }
+
+  .see-all {
+    font-weight: lighter;
+  }
+}

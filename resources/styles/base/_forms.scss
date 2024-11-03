@@ -1,0 +1,88 @@
+*:focus {
+  outline: 0;
+}
+
+input,
+select,
+textarea {
+  @include poppins-style(600);
+
+  width: 100%;
+  height: 50px;
+  padding: 0 12px;
+  border: solid 2px $black;
+  border-radius: 0;
+  background-color: transparent;
+  color: $black;
+
+  &::placeholder {
+    color: $black;
+    opacity: 0.4;
+  }
+}
+
+option {
+  color: $black;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  height: auto;
+  width: auto;
+  border: 0;
+  background: transparent;
+  line-height: normal;
+}
+
+input[type="file"] {
+  height: auto;
+  padding: #{calc($baseSpacing / 4)} #{calc($baseSpacing / 2)};
+  line-height: normal;
+}
+
+select {
+  width: 100%;
+  line-height: normal;
+}
+
+textarea {
+  width: 100%;
+  height: 325px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  overflow: auto;
+  resize: none;
+}
+
+.file-input {
+  position: relative;
+}
+
+.file-input-box {
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.file-input-label {
+  height: 5rem;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  background-color: $bgColor;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.file-svg {
+  height: 16px;
+  margin-right: 0.4rem;
+  position: absolute;
+  top: 4.5rem;
+  right: 1.1rem;
+  opacity: 0.7;
+}

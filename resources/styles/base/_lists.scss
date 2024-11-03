@@ -1,0 +1,41 @@
+ul,
+ol {
+  margin-left: $baseSpacing;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+.list-unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  list-style: disc;
+
+  ul {
+    a {
+      padding-left: 30px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+}

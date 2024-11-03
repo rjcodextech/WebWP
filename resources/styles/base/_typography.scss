@@ -1,0 +1,152 @@
+h1 {
+  @include poppins-style(700);
+
+  font-size: 2.5rem;
+  line-height: 1.5;
+  color: $primary;
+
+  @include respond-to("tablet") {
+    font-size: 3.2rem;
+  }
+
+  @include respond-to("tablet") {
+    font-size: 3.4rem;
+  }
+
+  @include respond-to("desktop") {
+    font-size: 3.7rem;
+  }
+}
+
+h2 {
+  @include poppins-style(700);
+
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  color: $primary;
+
+  @include respond-to("mobile") {
+    font-size: 3rem;
+  }
+
+  @include respond-to("tablet") {
+    font-size: 3.2rem;
+  }
+
+  // @include respond-to("desktop") {
+  //   //font-size: 3.5rem;
+  // }
+}
+
+h3 {
+  @include poppins-style(700);
+
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: $primary;
+
+  // @include respond-to("mobile") {
+  //   font-size: 2.8rem;
+  // }
+
+  // @include respond-to("tablet") {
+  //   font-size: 3rem;
+  // }
+
+  // @include respond-to("desktop") {
+  //   font-size: 3.3rem;
+  // }
+}
+
+h4 {
+  @include poppins-style(700);
+
+  font-size: 2.2rem;
+  line-height: 1.5;
+  color: $primary;
+  margin-bottom: 1rem;
+
+  // @include respond-to("mobile") {
+  //   font-size: 2.6rem;
+  // }
+
+  // @include respond-to("tablet") {
+  //   font-size: 2.8rem;
+  // }
+
+  // @include respond-to("desktop") {
+  //   font-size: 3.1rem;
+  // }
+}
+
+h5 {
+  @include poppins-style(700);
+
+  font-size: 2rem;
+  line-height: normal;
+  color: $primary;
+  margin-bottom: 1rem;
+
+  // @include respond-to("mobile") {
+  //   font-size: 2.4rem;
+  // }
+
+  // @include respond-to("tablet") {
+  //   font-size: 2.6rem;
+  // }
+
+  // @include respond-to("desktop") {
+  //   font-size: 2.9rem;
+  // }
+}
+
+h6 {
+  @include poppins-style(700);
+
+  font-size: 1.8rem;
+  line-height: normal;
+  color: $primary;
+  margin-bottom: 1rem;
+
+  // @include respond-to("mobile") {
+  //   font-size: 2.2rem;
+  // }
+
+  // @include respond-to("tablet") {
+  //   font-size: 2.4rem;
+  // }
+
+  // @include respond-to("desktop") {
+  //   font-size: 2.7rem;
+  // }
+}
+
+p,
+.para {
+  @include poppins-style(400);
+  font-size: $baseSize;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.label {
+  @include poppins-style(400, 700);
+
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: $white;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}

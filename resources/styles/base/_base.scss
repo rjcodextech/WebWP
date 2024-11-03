@@ -1,0 +1,128 @@
+html {
+	font-size: 62.5%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: transparent;
+
+	// @extend .poppins-regular;
+
+	@include poppins-style(400);
+
+	font-size: $baseSize;
+	line-height: 1.2;
+	color: $black;
+	text-size-adjust: none;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Basic styles for links
+ */
+
+a {
+	color: $primary;
+	text-decoration: none;
+
+	&:hover {
+		color: $primary;
+	}
+}
+
+a[href^='tel'] {
+	font-family: inherit;
+	font-style: inherit;
+	font-size: inherit;
+	color: inherit;
+	text-decoration: none;
+}
+
+/**
+ * Rules
+ */
+
+hr {
+	height: 1px;
+	background-color: $primary;
+}
+
+a:active,
+a:focus,
+li:focus,
+li:active {
+	border: 0 !important;
+	outline: none !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+	-webkit-tap-highlight-color: transparent !important; /* Chrome/Safari */ /* Firefox */ /* IE10+ */
+	user-select: none;
+}
+
+img,
+figure {
+	max-width: 100%;
+}
+
+.m-auto {
+	margin: 0 auto;
+}
+
+// Example usage of mixins
+.container {
+	@include container; // Default is normal container
+}
+
+.container-fluid {
+	@include container(true); // Fluid container
+}
+
+.row {
+	@include row;
+}
+
+.section-block {
+	display: block;
+	width: 100%;
+	position: relative;
+	margin-bottom: 2rem;
+
+	a {
+		@include poppins-style(600);
+	}
+}
+
+.mb-2 {
+	padding: 2rem;
+}
+// .p-0 {
+// 	padding: 0px !important;
+// }
+
+.text-center {
+	text-align: center;
+}
+
+.block--webwp {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding: 2rem 0px;
+	height: 100%;
+	overflow: hidden;
+	&.p-0 {
+		padding: 0px;
+	}
+
+	@include respond-to('tablet') {
+		padding: 5rem 0px;
+	}
+}

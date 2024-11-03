@@ -1,0 +1,66 @@
+@font-face {
+	font-family: 'Panton';
+	src: url('../../public/fonts/Panton-SemiBold.woff2') format('woff2'),
+		url('../../public/fonts/Panton-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Panton';
+	src: url('../../public/fonts/Panton-Bold.woff2') format('woff2'),
+		url('../../public/fonts/Panton-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Panton';
+	src: url('../../public/fonts/Panton-Regular.woff2') format('woff2'),
+		url('../../public/fonts/Panton-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Panton';
+	src: url('../../public/fonts/Panton-Black.woff2') format('woff2'),
+		url('../../public/fonts/Panton-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Panton';
+	src: url('../../public/fonts/Panton-ExtraBold.woff2') format('woff2'),
+		url('../../public/fonts/Panton-ExtraBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+.poppins {
+	&-regular {
+		@include font-style($poppins, 400);
+	}
+
+	&-medium {
+		@include font-style($poppins, 500);
+	}
+
+	&-semibold {
+		@include font-style($poppins, 600);
+	}
+
+	&-bold {
+		@include font-style($poppins, 700);
+	}
+
+	&-extrabold {
+		@include font-style($poppins, 800);
+	}
+}

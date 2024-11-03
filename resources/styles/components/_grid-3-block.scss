@@ -1,0 +1,44 @@
+.grid-3-block {
+  .grid-item {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include respond-to("tablet") {
+      @include column(4);
+    }
+  }
+
+  .grid-item-inner {
+    background-color: $bgColor;
+    border-top-right-radius: 1.5rem;
+    display: block;
+    width: 100%;
+  }
+
+  .grid-image {
+    position: relative;
+  }
+
+  .grid-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-right-radius: 1.5rem;
+  }
+
+  .grid-title {
+    @include poppins-style(600);
+
+    font-size: $baseSize;
+    line-height: 1.7;
+    margin: 0 0 10px;
+    padding: 1.5rem;
+    min-height: 50px;
+  }
+
+  .grid-logo {
+    max-width: 150px;
+    margin: auto;
+    padding-bottom: 1.5rem;
+  }
+}

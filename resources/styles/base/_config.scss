@@ -1,0 +1,154 @@
+// Variables for breakpoints
+$breakpoints: (
+	'mobile': 480px,
+	'tablet': 768px,
+	'desktop': 1024px,
+);
+$container-max-widths: (
+	'tablet': 720px,
+	'desktop': 960px,
+);
+$gutter-width: 30px; // Default gutter width between columns
+
+@mixin respond-to($device) {
+	$breakpoint: map-get($breakpoints, $device);
+
+	@if $breakpoint {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	} @else {
+		@warn "No breakpoint found for '#{$device}'.";
+	}
+}
+
+@mixin container($fluid: false) {
+	width: 100%;
+	padding-right: calc(#{$gutter-width} / 2);
+	padding-left: calc(#{$gutter-width} / 2);
+	margin-right: auto;
+	margin-left: auto;
+
+	@if $fluid {
+		max-width: 100%;
+		padding: 0 2rem;
+
+		@include respond-to('tablet') {
+			padding: 0 12.7rem;
+		}
+
+		@include respond-to('mobile') {
+			padding: 0 7.5rem;
+		}
+	} @else {
+		@each $device, $value in $breakpoints {
+			@if map.has-key($container-max-widths, $device) {
+				@include respond-to($device) {
+					max-width: map-get($container-max-widths, $device);
+				}
+			}
+		}
+
+		@include respond-to('desktop') {
+			max-width: 1200px;
+		}
+	}
+}
+
+@mixin row {
+	display: flex;
+	flex-wrap: wrap;
+
+	// Responsive adjustment for first and last column padding
+	@include respond-to('mobile') {
+		margin-right: calc(-#{$gutter-width} / 2);
+		margin-left: calc(-#{$gutter-width} / 2);
+
+		> .column {
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+
+	@include respond-to('tablet') {
+		> .column {
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+
+	@include respond-to('desktop') {
+		> .column {
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@mixin column($size: null, $device: null) {
+	// If no size is provided, column takes up equal space
+	@if $size == null {
+		flex: 1;
+		max-width: 100%;
+	} @else {
+		$column-width: calc((100% / 12 * #{$size}) - #{$gutter-width});
+
+		flex: 0 0 calc(100% / 12 * #{$size});
+		max-width: calc(100% / 12 * #{$size});
+	}
+
+	padding-right: calc(#{$gutter-width} / 2);
+	padding-left: calc(#{$gutter-width} / 2);
+
+	@if $device {
+		@include respond-to($device) {
+			@if $size == null {
+				flex: 1;
+				max-width: 100%;
+			} @else {
+				flex: 0 0 calc(100% / 12 * #{$size});
+				max-width: calc(100% / 12 * #{$size});
+			}
+		}
+	}
+}
+
+@mixin line-height-plus($additional-px) {
+	line-height: calc(#{$base-line-height} + #{$additional-px});
+}
+
+@mixin line-clamp($lines) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin font-style($family, $weight, $style: normal) {
+	font-family: $family;
+	font-weight: $weight;
+	font-style: $style;
+
+	// font-display: swap;
+}
+
+@mixin poppins-style($weight, $style: normal) {
+	@include font-style($poppins, $weight, $style);
+}
+

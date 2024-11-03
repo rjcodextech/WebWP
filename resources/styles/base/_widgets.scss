@@ -1,0 +1,130 @@
+.widget {
+    display: block;
+    border: 1px solid $orangyYellow;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    .widgettitle {
+        font-size: $baseSize;
+        color: $primary;
+        font-family: $poppins;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $secondary;
+        margin-bottom: 1rem;
+    }
+
+    .wp-block-page-list,
+    .wp-block-categories,
+    .wp-block-archives,
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-family: $poppins;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            font-size: $baseSize;
+            line-height: $baseLineHeight;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $orangyYellow;
+            }
+
+            a {
+                text-decoration: none;
+                color: $baseColor;
+                font-weight: 600;
+                transition:
+                    color 0.3s ease,
+                    transform 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                font-family: $panton;
+
+                // Arrow icon by default
+                &::before {
+                    content: "➔";
+                    font-size: $zeroSize;
+                    color: $primary;
+                    margin-right: 8px;
+                    transition:
+                        color 0.3s ease,
+                        transform 0.3s ease;
+                }
+
+                &:hover {
+                    color: $secondary;
+
+                    &::before {
+                        color: $secondary;
+                        transform: translateX(5px); // subtle movement on hover
+                    }
+                }
+            }
+        }
+    }
+
+    //   Recent posts
+    .wp-block-latest-posts {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        li {
+            margin-bottom: 1rem;
+        }
+
+        .wp-block-latest-posts__featured-image {
+            width: 100%;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 0.5rem 0px;
+            &::before {
+                background: unset;
+                content: unset;
+            }
+        }
+        .wp-block-latest-posts__post-author,
+        .wp-block-latest-posts__post-date {
+            display: inline-flex;
+            justify-content: space-between;
+            min-width: 50%;
+        }
+    }
+    .wp-block-calendar {
+        caption {
+            font-size: $baseSize;
+            color: $primary;
+            font-family: $poppins;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid $secondary;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.site-footer {
+    .widget-area {
+        .widget_block {
+            * {
+                color: $white;
+                border-color: $white;
+            }
+        }
+    }
+}

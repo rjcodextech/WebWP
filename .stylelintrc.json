@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
+  "rules": {
+    "indentation": "tab",
+    "max-nesting-depth": 15,
+    "selector-max-id": 2,
+    "selector-max-compound-selectors": 10,
+    "selector-class-pattern": null,
+    "scss/dollar-variable-pattern":null,
+    "selector-no-qualifying-type": null,
+    "scss/at-import-partial-extension-blacklist": [".scss"],
+    "scss/no-global-function-names": null
+  }
+}

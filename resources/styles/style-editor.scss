@@ -1,0 +1,253 @@
+@charset 'UTF-8';
+@use "sass:map";
+@import "base/variables";
+@import "base/config";
+@import "base/fonts";
+
+// Body and Background
+.editor-styles-wrapper {
+    font-family: $poppins;
+    color: $baseColor;
+    font-size: $baseSize;
+    background-color: $bgColor;
+    line-height: $baseLineHeight;
+    padding: $baseSpacing;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $panton;
+    color: $primary;
+    margin-top: $baseSpacing;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+// Paragraphs
+p {
+    font-size: $contentFontSize;
+    margin-bottom: $baseSpacing;
+}
+
+// Links
+a {
+    color: $secondary;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+    }
+}
+
+// Lists
+ul,
+ol {
+    padding-left: 1.5em;
+    font-size: $contentFontSize;
+
+    li {
+        margin-bottom: 0.5em;
+    }
+}
+
+// Buttons
+button,
+.wp-block-button__link {
+    font-family: $poppins;
+    background-color: $primary;
+    color: $white;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        background-color: $secondary;
+        color: $black;
+    }
+}
+
+// Blockquotes
+blockquote {
+    border-left: 4px solid $orangyYellow;
+    padding-left: $baseSpacing;
+    color: $baseColor;
+    font-style: italic;
+}
+
+// Code Blocks
+code,
+pre {
+    font-family: monospace;
+    background-color: $orangyYellow;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: $smallFont;
+}
+
+// Tables
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        border: 1px solid $baseColor;
+        padding: 0.75em;
+    }
+
+    th {
+        background-color: $primary;
+        color: $white;
+        text-align: left;
+    }
+}
+
+// Images
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.widget {
+    display: block;
+    border: 1px solid $orangyYellow;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    .widgettitle {
+        font-size: $baseSize;
+        color: $primary;
+        font-family: $poppins;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $secondary;
+        margin-bottom: 1rem;
+    }
+
+    .wp-block-page-list,
+    .wp-block-categories,
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-family: $poppins;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            font-size: $baseSize;
+            line-height: $baseLineHeight;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $orangyYellow;
+            }
+
+            a {
+                text-decoration: none;
+                color: $baseColor;
+                font-weight: 600;
+                transition:
+                    color 0.3s ease,
+                    transform 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                font-family: $panton;
+
+                // Arrow icon by default
+                &::before {
+                    content: "➔";
+                    font-size: $zeroSize;
+                    color: $primary;
+                    margin-right: 8px;
+                    transition:
+                        color 0.3s ease,
+                        transform 0.3s ease;
+                }
+
+                &:hover {
+                    color: $secondary;
+
+                    &::before {
+                        color: $secondary;
+                        transform: translateX(5px); // subtle movement on hover
+                    }
+                }
+            }
+        }
+    }
+
+    //   Recent posts
+    .wp-block-latest-posts {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .wp-block-latest-posts__featured-image {
+            width: 100%;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        a {
+            &::before {
+                background: unset;
+                content: unset;
+            }
+        }
+        .wp-block-latest-posts__post-author,
+        .wp-block-latest-posts__post-date {
+            display: inline-flex;
+            justify-content: space-between;
+            min-width: 50%;
+        }
+    }
+    .wp-block-calendar {
+        caption {
+            font-size: $baseSize;
+            color: $primary;
+            font-family: $poppins;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid $secondary;
+            margin-bottom: 1rem;
+        }
+    }
+}

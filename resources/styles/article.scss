@@ -1,0 +1,88 @@
+@charset 'UTF-8';
+@use "sass:map";
+@import "base/variables";
+@import "base/config";
+@import "base/fonts";
+@import "base/base";
+@import "base/images";
+@import "base/forms";
+@import "base/lists";
+@import "base/typography";
+@import "base/wp-default";
+
+@import "components/header";
+@import "components/footer";
+
+@import "components/page";
+@import "components/grid-4-block";
+@import "components/grid-3-block";
+@import "base/widgets";
+@import "article/typo";
+
+.article-thumbnail {
+    margin-bottom: 2rem;
+}
+.article-meta {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.article-nav {
+    padding: 1rem 0;
+    background-color: $bgColor;
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        .screen-reader-text {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            width: 100%;
+
+            .nav-previous,
+            .nav-next {
+                width: 50%;
+                text-align: center;
+
+                a {
+                    display: inline-block;
+                    color: $primary;
+                    text-decoration: none;
+                    font-weight: bold;
+
+                    &:hover,
+                    &:focus {
+                        color: $secondary;
+                        text-decoration: underline;
+                    }
+
+                    .meta-nav {
+                        display: block;
+                        font-size: 1rem;
+                        color: $baseColor;
+                        margin-right: 0.25rem;
+                    }
+
+                    .post-title {
+                        font-size: $contentFontSize;
+                    }
+                }
+            }
+
+            .nav-previous {
+                text-align: left;
+            }
+
+            .nav-next {
+                text-align: right;
+            }
+        }
+    }
+}

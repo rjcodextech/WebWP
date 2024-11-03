@@ -1,0 +1,10 @@
+
+Todo:
+  ☐ Need to fix banner Image  - app\Structure\blocks\hero-banner.php
+  ☐ Make but CTA  - app\Structure\blocks\contact-info.php
+  ☐ Contact Form validation error css and response message css - app\Structure\blocks\contact-form.php
+  ☐ 404 page
+  ☐ Search result not found
+  ☐ Post - Related post
+  ☐ Post Category
+  ☐ Post Tag

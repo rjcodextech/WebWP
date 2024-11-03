@@ -1,0 +1,183 @@
+.webwp--banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0px;
+    background-color: $primary;
+    height: 200px;
+    flex-direction: column;
+    h1 {
+        display: inline-block;
+        color: $white;
+    }
+}
+.webwp--page {
+    .entry-content {
+        padding: 5rem 0px;
+        display: block;
+        width: 100%;
+    }
+}
+
+.webwp--grids {
+    padding: 5rem 0;
+    .post-title {
+        color: $primary;
+        font-family: $panton;
+        font-weight: 700;
+    }
+    .post-info {
+        padding: 2rem;
+    }
+    .post-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .post-title {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .post-excerpt {
+        p {
+            margin: 0px;
+        }
+    }
+}
+
+.pagination-wrapper {
+    text-align: center;
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+
+    .pagination {
+        list-style: none;
+        padding: 0;
+        display: inline-flex;
+    }
+
+    .page-item {
+        margin: 0 5px;
+    }
+
+    .page-link {
+        text-decoration: none;
+        padding: 10px 15px;
+        color: $primary;
+        border: 1px solid $primary;
+        border-radius: 4px;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+
+    .page-link:hover {
+        background-color: $primary;
+        color: $white;
+    }
+
+    .active .current {
+        background-color: $primary;
+        color: $white;
+        border: 1px solid $primary;
+        padding: 1rem 1.5rem;
+    }
+}
+
+.webwp--article {
+    padding: 2rem 0px;
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+// Comments Area Styles
+.comments-area {
+    margin-top: 2em;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    .comments-title {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        color: #333;
+    }
+
+    .comment-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 1.5em;
+            padding: 1em;
+            border: 1px solid ;
+            border-radius: 5px;
+            background-color: $white;
+
+            &.comment {
+                margin-top: 1em;
+            }
+
+            .comment-meta {
+                font-size: 0.9em;
+                color: $baseColor;
+
+                .fn {
+                    font-weight: bold;
+                    color: $primary;
+                }
+
+                .comment-date {
+                    margin-left: 1em;
+                    color: $baseColor;
+                }
+            }
+
+            .comment-content {
+                margin: 1em 0;
+                line-height: 1.5;
+                color: $baseColor;
+            }
+
+            .reply {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .comment-navigation {
+        margin: 2em 0;
+        text-align: center;
+
+        a {
+            padding: 0.5em 1em;
+            background-color: $primary;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #005177;
+            }
+        }
+    }
+}
+
+.navigation {
+    &.post-navigation {
+        width: 100%;
+        display: block;
+        padding: 1rem 0;
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
