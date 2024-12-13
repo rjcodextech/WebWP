@@ -65,6 +65,10 @@ GNU General Public License v2 or later
 ## Support
 For any inquiries or support, please visit our [support page](https://wpsimplifiedbysunil.com/support).
 
+
+## Resources 
+- Google Fonts: Open Font License (OFL), compatible with GPL.
+
 ---
 
 ## Contributions

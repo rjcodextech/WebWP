@@ -17,7 +17,7 @@
  */
 function webwp_register_stylesheets()
 {
-    wp_enqueue_style( 'google-font-archivo-narrow', '//fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic&subset=latin,latin-ext', array(), '2014-12-20', 'all' );
+    wp_enqueue_style( 'google-font-archivo-narrow', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap', array(), strtotime('now'), 'all' );
     wp_enqueue_style('app', asset_path('styles/main.css'), array(), strtotime('now'));
     if (is_single() && is_singular("post")):
         wp_enqueue_style('article', asset_path('styles/article.css'), array(), strtotime('now'));       

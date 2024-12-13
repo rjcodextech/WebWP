@@ -31,7 +31,7 @@ body {
 
 a {
 	color: $primary;
-	text-decoration: none;
+	text-decoration: underline;
 
 	&:hover {
 		color: $primary;
@@ -65,6 +65,15 @@ li:active {
 	text-decoration: none !important;
 	-webkit-tap-highlight-color: transparent !important; /* Chrome/Safari */ /* Firefox */ /* IE10+ */
 	user-select: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid $orangyYellow;
+	outline-offset: 2px;
 }
 
 img,

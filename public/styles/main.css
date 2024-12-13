@@ -2,63 +2,28 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./resources/styles/main.scss ***!
   \*********************************************************************************************************************/
 @charset "UTF-8";
-@font-face {
-  font-family: "Panton";
-  src: url(../fonts/Panton-SemiBold.woff2) format("woff2"), url(../fonts/Panton-SemiBold.woff) format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Panton";
-  src: url(../fonts/Panton-Bold.woff2) format("woff2"), url(../fonts/Panton-Bold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Panton";
-  src: url(../fonts/Panton-Regular.woff2) format("woff2"), url(../fonts/Panton-Regular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Panton";
-  src: url(../fonts/Panton-Black.woff2) format("woff2"), url(../fonts/Panton-Black.woff) format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Panton";
-  src: url(../fonts/Panton-ExtraBold.woff2) format("woff2"), url(../fonts/Panton-ExtraBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
 .poppins-regular {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
 }
 .poppins-medium {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 500;
   font-style: normal;
 }
 .poppins-semibold {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
 }
 .poppins-bold {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
 }
 .poppins-extrabold {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 800;
   font-style: normal;
 }
@@ -76,7 +41,7 @@ html {
 
 body {
   background-color: transparent;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
@@ -93,7 +58,7 @@ body {
  */
 a {
   color: #472f91;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:hover {
   color: #472f91;
@@ -125,6 +90,15 @@ li:active {
   text-decoration: none !important;
   -webkit-tap-highlight-color: transparent !important; /* Chrome/Safari */ /* Firefox */ /* IE10+ */
   user-select: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #d6e5ea;
+  outline-offset: 2px;
 }
 
 img,
@@ -219,7 +193,7 @@ figure {
   margin-bottom: 2rem;
 }
 .section-block a {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
 }
@@ -295,7 +269,7 @@ img {
 input,
 select,
 textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
   width: 100%;
@@ -417,7 +391,7 @@ ol {
 }
 
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 2.5rem;
@@ -441,7 +415,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   margin-bottom: 1rem;
@@ -461,7 +435,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   margin-bottom: 1rem;
@@ -471,7 +445,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 2.2rem;
@@ -481,7 +455,7 @@ h4 {
 }
 
 h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 2rem;
@@ -491,7 +465,7 @@ h5 {
 }
 
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
   font-size: 1.8rem;
@@ -502,7 +476,7 @@ h6 {
 
 p,
 .para {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
@@ -511,7 +485,7 @@ p,
 }
 
 .label {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 400;
   font-style: 700;
   font-size: 1.4rem;
@@ -541,7 +515,7 @@ p,
 }
 .wp-block-quote p {
   margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 700;
   font-style: "italic";
 }
@@ -626,6 +600,71 @@ p,
   outline: 0;
 }
 
+/* Default styles for .wp-caption */
+.wp-caption {
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+/* Default styles for .wp-caption-text */
+.wp-caption-text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #555;
+  text-align: center;
+  padding: 5px 0;
+}
+
+/* Default styles for .sticky */
+.sticky {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Default styles for .gallery-caption */
+.gallery-caption {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Default styles for .bypostauthor */
+.bypostauthor {
+  font-weight: bold;
+  color: #472f91;
+}
+
+/* Default styles for .alignright */
+.alignright {
+  float: right;
+  margin-left: 10px;
+}
+
+/* Default styles for .alignleft */
+.alignleft {
+  float: left;
+  margin-right: 10px;
+}
+
+/* Default styles for .aligncenter */
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .widget {
   display: block;
   border: 1px solid #d6e5ea;
@@ -635,7 +674,7 @@ p,
 .widget .widgettitle {
   font-size: 1.6rem;
   color: #472f91;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #2c8196;
   margin-bottom: 1rem;
@@ -647,7 +686,7 @@ p,
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
 }
 .widget .wp-block-page-list ul,
 .widget .wp-block-categories ul,
@@ -683,7 +722,7 @@ p,
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-flex;
   align-items: center;
-  font-family: "Panton", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .widget .wp-block-page-list li a::before,
 .widget .wp-block-categories li a::before,
@@ -743,7 +782,7 @@ p,
 .widget .wp-block-calendar caption {
   font-size: 1.6rem;
   color: #472f91;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #2c8196;
   margin-bottom: 1rem;
@@ -840,7 +879,7 @@ header .header .site-menu.active ul li {
 }
 header .header .site-menu.active ul li .nav-link {
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-size: 2rem;
   padding: 0 12px;
   transition: ease-in-out 0.3s;
@@ -874,7 +913,7 @@ header .header .site-menu ul li:after {
 }
 header .header .site-menu ul li a {
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-size: 1.5rem;
   padding: 0 12px;
   transition: ease-in-out 0.3s;
@@ -948,7 +987,7 @@ header .header .site-menu ul li:hover .sub-menu {
 
 .webwp--grids .post-title {
   color: #472f91;
-  font-family: "Panton", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -1132,7 +1171,7 @@ header .header .site-menu ul li:hover .sub-menu {
   border-top-right-radius: 1.5rem;
 }
 .grid-4-block .grid-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
   font-size: 1.6rem;
@@ -1175,7 +1214,7 @@ header .header .site-menu ul li:hover .sub-menu {
   border-top-right-radius: 1.5rem;
 }
 .grid-3-block .grid-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", serif;
   font-weight: 600;
   font-style: normal;
   font-size: 1.6rem;

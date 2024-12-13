@@ -57,7 +57,7 @@ get_header();
                         <?php get_search_form(); ?>
                     </div>
                     <div class="btn-wrapper">
-                        <a href="<?php echo home_url('/'); ?>" class="btn">Go to Homepage</a>
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="btn">Go to Homepage</a>
                     </div>
                 </div>
             </div>

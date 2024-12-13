@@ -7,15 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <a class="skip-link screen-reader-text" href="#app"><?php _e('Skip to content', 'twentynineteen'); ?></a>
-
-
+    <a class="skip-link screen-reader-text" href="#app"><?php _e('Skip to content', 'webwp'); ?></a>
     <header class="site-header">
         <div class="container">
             <div class="header">
@@ -31,13 +28,11 @@
                         ?>
                     </a>
                 </div>
-
                 <div class="hamburger-menu" id="hamburger">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
-
                 <nav class="site-menu">
                     <?php
                     wp_nav_menu([

@@ -16,7 +16,7 @@ get_header();
                 <h1>Error 404</h1>
                 <p>Sorry, the page you are looking for could not be found. Please check the URL or return to the homepage.</p>
                 <div class="btn-wrapper">
-                    <a href="<?php echo home_url('/'); ?>" class="btn">Go to Homepage</a>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="btn">Go to Homepage</a>
                 </div>
             </div>
         </div>
