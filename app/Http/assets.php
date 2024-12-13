@@ -17,10 +17,10 @@
  */
 function webwp_register_stylesheets()
 {
+    wp_enqueue_style( 'google-font-archivo-narrow', '//fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic&subset=latin,latin-ext', array(), '2014-12-20', 'all' );
+    wp_enqueue_style('app', asset_path('styles/main.css'), array(), strtotime('now'));
     if (is_single() && is_singular("post")):
-        wp_enqueue_style('article', asset_path('styles/article.css'), array(), strtotime('now'));
-    else:
-        wp_enqueue_style('app', asset_path('styles/main.css'), array(), strtotime('now'));
+        wp_enqueue_style('article', asset_path('styles/article.css'), array(), strtotime('now'));       
     endif;
 }
 add_action('wp_enqueue_scripts', 'webwp_register_stylesheets');

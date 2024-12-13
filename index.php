@@ -12,7 +12,7 @@ get_header();
 ?>
 
 <?php if (have_posts()) : ?>
-    <section class="webwp--grids grid-3-block">
+    <section class="webwp--grids grid-3-block default-padding">
         <div class="container">
             <div class="row">
                 <div class="inner-header">
@@ -52,7 +52,7 @@ get_header();
     </section>
 <?php else : ?>
 
-    <section id="post-0" class="post no-results pt-80 pb-80 not-found">
+    <section id="post-0" class="post no-results default-padding not-found">
         <div class="container">
             <header class="entry-header">
                 <h1 class="entry-title"><?php _e('Nothing Found', 'webwp'); ?></h1>

@@ -38,7 +38,7 @@ a {
 	}
 }
 
-a[href^="tel"] {
+a[href^='tel'] {
 	font-family: inherit;
 	font-style: inherit;
 	font-size: inherit;
@@ -119,7 +119,7 @@ figure {
 		padding: 0px;
 	}
 
-	@include respond-to("tablet") {
+	@include respond-to('tablet') {
 		padding: 5rem 0px;
 	}
 }

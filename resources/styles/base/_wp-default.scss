@@ -1,82 +1,96 @@
 .wp-block-quote {
-  width: 100%;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding-left: 1rem;
-  border-left: 0;
-  display: block;
+	width: 100%;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	padding-left: 1rem;
+	border-left: 0;
+	display: block;
 
-  p {
-    margin-bottom: 0.5rem;
+	p {
+		margin-bottom: 0.5rem;
 
-    @include poppins-style(700, "italic");
-  }
+		@include poppins-style(700, 'italic');
+	}
 
-  cite {
-    width: 100%;
-    border-bottom: 2px solid $primary;
-    display: block;
-  }
-}
-
-/* Screen Reader Text */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  width: 1px;
-  height: 1px;
-  position: absolute !important;
-  overflow: hidden;
-  word-wrap: normal !important;
-
-  &:focus {
-    width: auto;
-    height: auto;
-    padding: 15px 20px;
-    border-top-right-radius: 2px;
-    display: block;
-    top: 5px;
-    left: 5px;
-    z-index: 100000; /* Above WP toolbar */
-    background-color: #f1f1f1;
-    box-shadow: 0 0 2px 2px rgb(0 0 0 / 25%);
-    font-size: 14px;
-    font-weight: bold;
-    line-height: normal;
-    color: #0baab0;
-    text-decoration: none;
-    clip: auto !important;
-  }
+	cite {
+		width: 100%;
+		border-bottom: 2px solid $primary;
+		display: block;
+	}
 }
 
 .wp-block-image {
-  border-top-left-radius: 1.5rem;
+	border-top-left-radius: 1.5rem;
 
-  &.size-full {
-    min-width: 100%;
-  }
+	&.size-full {
+		min-width: 100%;
+	}
 }
 
 .breadcrumbs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  li {
-    display: inline;
-    color: $secondary;
-    text-transform: capitalize;
-    a {
-      color: $primary;
-      text-decoration: none;
-    }
-  }
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		display: inline;
+		color: $secondary;
+		text-transform: capitalize;
+		a {
+			color: $primary;
+			text-decoration: none;
+		}
+	}
 }
 
 .btn {
-  border: 1px solid $primary;
-  color: $primary;
-  padding: 1rem 2rem;
-  &:hover {
-    border: 1px solid $secondary;
-    color: $secondary;
-  }
+	border: 1px solid $primary;
+	color: $primary;
+	padding: 1rem 2rem;
+	&:hover {
+		border: 1px solid $secondary;
+		color: $secondary;
+	}
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	right: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#app[tabindex='-1']:focus {
+	outline: 0;
 }

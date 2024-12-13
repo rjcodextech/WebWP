@@ -551,34 +551,6 @@ p,
   display: block;
 }
 
-/* Screen Reader Text */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  width: 1px;
-  height: 1px;
-  position: absolute !important;
-  overflow: hidden;
-  word-wrap: normal !important;
-}
-.screen-reader-text:focus {
-  width: auto;
-  height: auto;
-  padding: 15px 20px;
-  border-top-right-radius: 2px;
-  display: block;
-  top: 5px;
-  left: 5px;
-  z-index: 100000; /* Above WP toolbar */
-  background-color: #f1f1f1;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
-  font-size: 14px;
-  font-weight: bold;
-  line-height: normal;
-  color: #0baab0;
-  text-decoration: none;
-  clip: auto !important;
-}
-
 .wp-block-image {
   border-top-left-radius: 1.5rem;
 }
@@ -609,6 +581,49 @@ p,
 .btn:hover {
   border: 1px solid #2c8196;
   color: #2c8196;
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#app[tabindex="-1"]:focus {
+  outline: 0;
 }
 
 header {
@@ -715,6 +730,7 @@ header .header .site-menu ul {
   display: flex;
   flex-flow: wrap;
   list-style: none;
+  align-items: center;
 }
 header .header .site-menu ul li {
   position: relative;
@@ -723,7 +739,7 @@ header .header .site-menu ul li {
 header .header .site-menu ul li:after {
   content: "";
   width: 2px;
-  height: 2.1rem;
+  height: 1.6rem;
   background-color: #fff;
   position: absolute;
   right: 0;
@@ -731,7 +747,7 @@ header .header .site-menu ul li:after {
 header .header .site-menu ul li a {
   color: #fff;
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0 12px;
   transition: ease-in-out 0.3s;
 }
@@ -746,6 +762,28 @@ header .header .site-menu ul li:last-child a {
 }
 header .header .site-menu ul li:last-child:after {
   display: none;
+}
+header .header .site-menu ul li .downarrow {
+  width: 19px;
+  height: auto;
+  margin-left: 4px;
+  opacity: 0.9;
+  position: relative;
+  top: 3px;
+}
+header .header .site-menu ul li .sub-menu {
+  display: none;
+  transition: ease-in-out 0.3s;
+  width: 100%;
+  background-color: #472f91;
+  flex-flow: wrap;
+  position: absolute;
+  top: 20px;
+  height: 0;
+  overflow: hidden;
+}
+header .header .site-menu ul li:hover .sub-menu {
+  display: flex;
 }
 
 .site-footer {
@@ -767,6 +805,11 @@ header .header .site-menu ul li:last-child:after {
     padding-right: calc(30px / 2);
     padding-left: calc(30px / 2);
   }
+}
+
+.default-padding {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .webwp--page .entry-content {
@@ -791,6 +834,10 @@ header .header .site-menu ul li:last-child:after {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+.webwp--grids .post-meta .post_date,
+.webwp--grids .post-meta .post_by {
+  font-size: 1.3rem;
 }
 .webwp--grids .post-title {
   display: block;
@@ -1255,9 +1302,6 @@ header .header .site-menu ul li:last-child:after {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-}
-.article-nav .navigation .screen-reader-text {
-  display: none;
 }
 .article-nav .navigation .nav-links {
   display: flex;

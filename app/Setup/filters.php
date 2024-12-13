@@ -25,14 +25,14 @@ add_filter('body_class', function ($classes) {
  *
  * @return integer
  */
-function modify_excerpt_length()
+function webwp_modify_excerpt_length()
 {
     return 20;
 }
-add_filter('excerpt_length', 'modify_excerpt_length');
+add_filter('excerpt_length', 'webwp_modify_excerpt_length');
 
-function custom_excerpt_more($more)
+function webwp_excerpt_more($more)
 {
     return '...';
 }
-add_filter('excerpt_more', 'custom_excerpt_more');
+add_filter('excerpt_more', 'webwp_excerpt_more');
