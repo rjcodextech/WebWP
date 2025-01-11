@@ -88,7 +88,7 @@ if (have_posts()) :
                                     <?php echo get_the_post_thumbnail($post_item['ID'], 'full', ['class' => 'img-fluid']); ?>
                                 </div>
                                 <div class="post-info">
-                                    <label class="post-title"><?php echo $post_item['post_title']; ?></label>
+                                    <label class="post-title"><?php echo esc_html($post_item['post_title']); ?></label>
                                 </div>
                             </a>
                         </article>

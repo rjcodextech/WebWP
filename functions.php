@@ -35,6 +35,7 @@ function _debug($data = '')
 require_once WEBWP_THEME_PATH . 'app/helpers.php';
 require_once WEBWP_THEME_PATH . 'app/Http/assets.php';
 require_once WEBWP_THEME_PATH . 'app/Http/ajaxes.php';
+require_once WEBWP_THEME_PATH . 'app/Setup/customizer.php';
 require_once WEBWP_THEME_PATH . 'app/Setup/actions.php';
 require_once WEBWP_THEME_PATH . 'app/Setup/filters.php';
 require_once WEBWP_THEME_PATH . 'app/Setup/supports.php';
