@@ -3,29 +3,29 @@
     align-items: center;
     justify-content: center;
     max-width: 320px;
-    border: 1px solid $primary;
+    border: 1px solid var(--primary-color);
     padding: 5px;
-    background-color: $bgColor;
+    background-color: var(--bg-color);
     input[type="text"] {
         border: none;
         padding: 1rem;
         flex-grow: 1;
         outline: none;
-        font-size: $baseSize;
+        font-size: var(--base-size);
     }
     button {
         border: none;
-        background-color: $primary; /* WordPress blue */
+        background-color: var(--primary-color); /* WordPress blue */
         color: #fff;
         padding: 1rem 1.5rem;
-        font-size: $baseSize;
+        font-size: var(--base-size);
         cursor: pointer;
         transition: background-color 0.3s;
     }
     &:hover {
-        border-color: $secondary;
+        border-color: var(--secondary-color);
         button {
-            background-color: $secondary;
+            background-color: var(--secondary-color);
         }
     }
 }

@@ -16,7 +16,7 @@ body {
 
 	@include poppins-style(400);
 
-	font-size: $baseSize;
+	font-size: var(--base-size);
 	line-height: 1.2;
 	color: $black;
 	text-size-adjust: none;
@@ -30,11 +30,11 @@ body {
  */
 
 a {
-	color: $primary;
+	color: var(--primary-color);
 	text-decoration: underline;
 
 	&:hover {
-		color: $primary;
+		color: var(--primary-color);
 	}
 }
 
@@ -52,7 +52,7 @@ a[href^='tel'] {
 
 hr {
 	height: 1px;
-	background-color: $primary;
+	background-color: var(--primary-color);
 }
 
 a:active,
@@ -143,7 +143,7 @@ figure {
 	.article-by {
 		display: flex;
 		align-items: center;
-		border: 1px solid $bgColor;
+		border: 1px solid var(--bg-color);
 		padding: 1rem;
 		margin: 1rem;
 		img {
@@ -156,7 +156,7 @@ figure {
 .page {
 	.inner-header {
 		h1 {
-			border-bottom: 2px solid $primary;
+			border-bottom: 2px solid var(--primary-color);
 		}
 	}
 }

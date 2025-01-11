@@ -16,7 +16,7 @@
 
     .inner {
         background-color: $white;
-        border: 5px solid $primary;
+        border: 5px solid var(--primary-color);
        // padding: 2rem;
         width: 90%;
         max-width: 720px;
@@ -27,7 +27,7 @@
             top: -35px;
             right: -5px;
             cursor: pointer;
-            background-color: $primary;
+            background-color: var(--primary-color);
             border-top-right-radius: 1.5rem;
             padding: 5px 14px;
            /* width: 30px;
@@ -45,7 +45,7 @@
                 .searchform {
                     display: flex;
                     align-items: center;
-                   // border: 1px solid $primary;
+                   // border: 1px solid var(--primary-color);
                     border-top-right-radius: 1.5rem;
                     overflow: hidden;
 

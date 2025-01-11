@@ -79,7 +79,7 @@ p {
 }
 
 a {
-  color: var(--secondary-font);
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 a:hover, a:focus {
@@ -108,7 +108,7 @@ button,
 button:hover, button:focus,
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-  background-color: var(--secondary-font);
+  background-color: var(--secondary-color);
   color: #000;
 }
 
@@ -159,7 +159,7 @@ img {
   color: var(--primary-color);
   font-family: var(--secondary-font);
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--secondary-font);
+  border-bottom: 2px solid var(--secondary-color);
   margin-bottom: 1rem;
 }
 .widget .wp-block-page-list,
@@ -214,12 +214,12 @@ img {
 .widget .wp-block-page-list li a:hover,
 .widget .wp-block-categories li a:hover,
 .widget .menu li a:hover {
-  color: var(--secondary-font);
+  color: var(--secondary-color);
 }
 .widget .wp-block-page-list li a:hover::before,
 .widget .wp-block-categories li a:hover::before,
 .widget .menu li a:hover::before {
-  color: var(--secondary-font);
+  color: var(--secondary-color);
   transform: translateX(5px);
 }
 .widget .wp-block-latest-posts {
@@ -252,7 +252,7 @@ img {
   color: var(--primary-color);
   font-family: var(--secondary-font);
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--secondary-font);
+  border-bottom: 2px solid var(--secondary-color);
   margin-bottom: 1rem;
 }
 

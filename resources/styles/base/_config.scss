@@ -149,6 +149,6 @@ $gutter-width: 30px; // Default gutter width between columns
 }
 
 @mixin poppins-style($weight, $style: normal) {
-	@include font-style($poppins, $weight, $style);
+	@include font-style(var(--secondary-font), $weight, $style);
 }
 

@@ -1,6 +1,6 @@
 header {
 	width: 100%;
-	background-color: $primary;
+	background-color: var(--primary-color);
 	color: $white;
 	transition: all 0.3s ease-in-out;
 	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
@@ -12,10 +12,10 @@ header {
 		height: 100px;
 		padding: 2rem 0;
 		align-items: center;
-		// border-bottom: 1px solid $white;
+
 		.logo {
 			max-width: 160px;
-			@include respond-to("tablet") {
+			@include respond-to('tablet') {
 				max-width: 180px;
 			}
 			img {
@@ -24,6 +24,7 @@ header {
 				object-fit: fill;
 			}
 		}
+
 		.hamburger-menu {
 			display: block;
 			cursor: pointer;
@@ -44,19 +45,19 @@ header {
 				transform: rotate(45deg) translate(-5px, -5px);
 			}
 
-			@include respond-to("tablet") {
+			@include respond-to('tablet') {
 				display: none;
 			}
 		}
 
 		.site-menu {
 			display: none;
-			@include respond-to("tablet") {
+			@include respond-to('tablet') {
 				display: block;
 			}
 
 			&.active {
-				background: $primary;
+				background: var(--primary-color);
 				width: 100%;
 				height: calc(100vh - 100px);
 				z-index: 1;
@@ -78,20 +79,17 @@ header {
 						text-align: center;
 						.nav-link {
 							color: $white;
-							font-family: $poppins;
+							font-family: var(--secondary-font);
 							font-size: 2rem;
 							padding: 0 12px;
 							transition: ease-in-out 0.3s;
 							&:hover {
-								color: $secondary;
+								color: var(--secondary-color);
 							}
 						}
 
 						&.current-menu-item a {
-							color: $secondary;
-						}
-						&::after {
-							display: none;
+							color: var(--secondary-color);
 						}
 					}
 				}
@@ -106,36 +104,28 @@ header {
 				li {
 					position: relative;
 					list-style: none;
-					&:after {
-						content: "";
-						width: 2px;
-						height: 1.6rem;
-						background-color: $white;
-						position: absolute;
-						right: 0;
-					}
 					a {
 						color: $white;
-						font-family: $poppins;
+						font-family: var(--secondary-font);
 						font-size: 1.5rem;
-						padding: 0 12px;
+						padding: 0.8rem 1.2rem;
 						transition: ease-in-out 0.3s;
 
 						&:hover {
-							color: $secondary;
+							color: var(--secondary-color);
 						}
 					}
+
 					&.current-menu-item a {
-						color: $secondary;
+						color: var(--secondary-color);
 					}
+
 					&:last-child {
 						a {
 							padding-right: 0;
 						}
-						&:after {
-							display: none;
-						}
 					}
+
 					.downarrow {
 						width: 19px;
 						height: auto;
@@ -144,20 +134,86 @@ header {
 						position: relative;
 						top: 3px;
 					}
+
 					.sub-menu {
 						display: none;
 						transition: ease-in-out 0.3s;
 						width: 100%;
-						background-color: $primary;
-						flex-flow: wrap;
+						background-color: var(--primary-color);
 						position: absolute;
-						top: 20px;
-						height: 0;
-						overflow: hidden;
+						top: 100%;
+						left: 0;
+						padding: 0.5rem 0;
+
+						li {
+							width: 100%;
+							padding: 0.5rem 1rem;
+							display: block;
+
+							a {
+								font-size: 1.5rem;
+								padding: 0.8rem 1.2rem;
+								display: block;
+								color: $white;
+								transition: ease-in-out 0.3s;
+
+								&:hover {
+									color: var(--secondary-color);
+								}
+							}
+
+							.sub-menu {
+								display: none;
+								position: absolute;
+								top: 0;
+								left: 100%;
+								background-color: var(--primary-color);
+								padding: 0.5rem 0;
+
+								li {
+									padding: 0.5rem 1rem;
+
+									a {
+										font-size: 1.4rem;
+										padding: 0.8rem 1.2rem;
+									}
+
+									.sub-menu {
+										display: none;
+										position: absolute;
+										top: 0;
+										left: 100%;
+										background-color: var(--primary-color);
+										padding: 0.5rem 0;
+
+										li {
+											padding: 0.5rem 1rem;
+
+											a {
+												font-size: 1.3rem;
+												padding: 0.8rem 1.2rem;
+											}
+										}
+									}
+								}
+
+								&:hover {
+									display: flex;
+									flex-direction: column;
+								}
+							}
+						}
+
+						&:hover {
+							display: flex;
+							flex-direction: column;
+						}
 					}
+
 					&:hover {
 						.sub-menu {
 							display: flex;
+							flex-direction: column;
 						}
 					}
 				}

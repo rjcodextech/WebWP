@@ -1,21 +1,21 @@
 .poppins {
 	&-regular {
-		@include font-style($poppins, 400);
+		@include font-style(var(--secondary-font), 400);
 	}
 
 	&-medium {
-		@include font-style($poppins, 500);
+		@include font-style(var(--secondary-font), 500);
 	}
 
 	&-semibold {
-		@include font-style($poppins, 600);
+		@include font-style(var(--secondary-font), 600);
 	}
 
 	&-bold {
-		@include font-style($poppins, 700);
+		@include font-style(var(--secondary-font), 700);
 	}
 
 	&-extrabold {
-		@include font-style($poppins, 800);
+		@include font-style(var(--secondary-font), 800);
 	}
 }

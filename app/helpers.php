@@ -76,7 +76,11 @@ function webwp_breadcrumb()
         $breadcrumbs = array();
 
         // Home link
-        $breadcrumbs[] = '<a href="' . esc_url(home_url('/')) . '">' . esc_html($home_title) . '</a>';
+        $breadcrumbs[] = sprintf(
+            '<a href="%s">%s</a>',
+            esc_url(home_url('/')),
+            esc_html($home_title)
+        );
 
         if (is_category() || is_single()) {
             if (is_single()) {
@@ -84,7 +88,11 @@ function webwp_breadcrumb()
                 $categories = get_the_category();
                 if ($categories) {
                     foreach ($categories as $category) {
-                        $breadcrumbs[] = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                        $breadcrumbs[] = sprintf(
+                            '<a href="%s">%s</a>',
+                            esc_url(get_category_link($category->term_id)),
+                            esc_html($category->name)
+                        );
                     }
                 }
             } else {
@@ -93,32 +101,27 @@ function webwp_breadcrumb()
         } elseif (is_page()) {
             $breadcrumbs[] = esc_html(get_the_title());
         } elseif (is_home()) {
-            $breadcrumbs[] = esc_html__('Blog', 'webwp');
+            $breadcrumbs[] = esc_html__('Blog', 'text-domain');
         }
 
         // Construct breadcrumbs output
-        ob_start();
-?>
-        <ul class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <?php foreach ($breadcrumbs as $key => $breadcrumb): ?>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <?php echo esc_attr($breadcrumb); // Escaped earlier when added to $breadcrumbs 
-                    ?>
-                    <meta itemprop="position" content="<?php echo esc_attr($key + 1); ?>" />
-                </li>
-                <?php if ($key < count($breadcrumbs) - 1): ?>
-                    <li class="separator">
-                        <?php
-                        $next_is_category = ($key > 0 && isset($categories) && $key < count($categories));
-                        echo esc_html($next_is_category ? $category_separator : $separator);
-                        ?>
-                    </li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-<?php
-        $output = ob_get_clean();
-        echo esc_attr($output);
+        $output = '<ul class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">';
+        foreach ($breadcrumbs as $key => $breadcrumb) {
+            $output .= '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
+            $output .= wp_kses_post($breadcrumb);
+            $output .= '<meta itemprop="position" content="' . esc_attr($key + 1) . '" />';
+            $output .= '</li>';
+
+            if ($key < count($breadcrumbs) - 1) {
+                $next_is_category = ($key > 0 && isset($categories) && $key < count($categories));
+                $separator_to_use = $next_is_category ? $category_separator : $separator;
+                $output .= '<li class="separator">' . esc_html($separator_to_use) . '</li>';
+            }
+        }
+        $output .= '</ul>';
+
+        // Display breadcrumbs
+        echo wp_kses_post($output);
     }
 }
 

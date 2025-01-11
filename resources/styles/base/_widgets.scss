@@ -4,11 +4,11 @@
     padding: 1rem;
     margin-bottom: 2rem;
     .widgettitle {
-        font-size: $baseSize;
-        color: $primary;
-        font-family: $poppins;
+        font-size: var(--base-size);
+        color: var(--primary-color);
+        font-family: var(--secondary-font);
         padding-bottom: 0.5rem;
-        border-bottom: 2px solid $secondary;
+        border-bottom: 2px solid var(--secondary-color);
         margin-bottom: 1rem;
     }
 
@@ -19,7 +19,7 @@
         list-style: none;
         padding: 0;
         margin: 0;
-        font-family: $poppins;
+        font-family: var(--secondary-font);
         ul {
             list-style: none;
             padding: 0;
@@ -28,7 +28,7 @@
 
         li {
             padding: 5px 0;
-            font-size: $baseSize;
+            font-size: var(--base-size);
             line-height: $baseLineHeight;
             position: relative;
             transition: color 0.3s ease;
@@ -46,13 +46,13 @@
                     transform 0.3s ease;
                 display: inline-flex;
                 align-items: center;
-                font-family: $panton;
+                font-family: var(--primary-font);
 
                 // Arrow icon by default
                 &::before {
                     content: "➔";
                     font-size: $zeroSize;
-                    color: $primary;
+                    color: var(--primary-color);
                     margin-right: 8px;
                     transition:
                         color 0.3s ease,
@@ -60,10 +60,10 @@
                 }
 
                 &:hover {
-                    color: $secondary;
+                    color: var(--secondary-color);
 
                     &::before {
-                        color: $secondary;
+                        color: var(--secondary-color);
                         transform: translateX(5px); // subtle movement on hover
                     }
                 }
@@ -108,11 +108,11 @@
     }
     .wp-block-calendar {
         caption {
-            font-size: $baseSize;
-            color: $primary;
-            font-family: $poppins;
+            font-size: var(--base-size);
+            color: var(--primary-color);
+            font-family: var(--secondary-font);
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid $secondary;
+            border-bottom: 2px solid var(--secondary-color);
             margin-bottom: 1rem;
         }
     }

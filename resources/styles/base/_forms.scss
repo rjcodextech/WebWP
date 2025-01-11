@@ -73,7 +73,7 @@ textarea {
   padding: 0 1rem;
   display: inline-flex;
   align-items: center;
-  background-color: $bgColor;
+  background-color: var(--bg-color);
   font-size: 1.4rem;
   cursor: pointer;
 }

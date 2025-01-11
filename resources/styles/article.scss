@@ -28,7 +28,7 @@
 
 .article-nav {
     padding: 1rem 0;
-    background-color: $bgColor;
+    background-color: var(--bg-color);
 
     .navigation {
         display: flex;
@@ -46,13 +46,13 @@
 
                 a {
                     display: inline-block;
-                    color: $primary;
+                    color: var(--primary-color);
                     text-decoration: none;
                     font-weight: bold;
 
                     &:hover,
                     &:focus {
-                        color: $secondary;
+                        color: var(--secondary-color);
                         text-decoration: underline;
                     }
 
@@ -64,7 +64,7 @@
                     }
 
                     .post-title {
-                        font-size: $contentFontSize;
+                        font-size: var(--content-size);
                     }
                 }
             }
@@ -95,7 +95,7 @@
     display: inline-block;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: $bgColor;
+    background-color: var(--bg-color);
     color: $baseColor;
     font-size: 14px;
     text-decoration: none;
@@ -104,7 +104,7 @@
 
 /* Hover effect for tag links */
 .tags_post li a:hover {
-    background-color: $primary; /* WordPress blue */
+    background-color: var(--primary-color); /* WordPress blue */
     color: #fff;
 }
 
