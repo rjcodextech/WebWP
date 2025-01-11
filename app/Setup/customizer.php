@@ -3,9 +3,9 @@ function webwp_customize_register($wp_customize)
 {
     // Add Colors Section
     $wp_customize->add_section('webwp_colors', array(
-        'title'       => __('Theme Colors', 'text-domain'),
+        'title'       => __('Theme Colors', 'webwp'),
         'priority'    => 30,
-        'description' => __('Customize the primary and secondary colors of your site.', 'text-domain'),
+        'description' => __('Customize the primary and secondary colors of your site.', 'webwp'),
     ));
 
     // Primary Color
@@ -14,7 +14,7 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'primary_color', array(
-        'label'    => __('Primary Color', 'text-domain'),
+        'label'    => __('Primary Color', 'webwp'),
         'section'  => 'webwp_colors',
         'settings' => 'primary_color',
     )));
@@ -25,7 +25,7 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'secondary_color', array(
-        'label'    => __('Secondary Color', 'text-domain'),
+        'label'    => __('Secondary Color', 'webwp'),
         'section'  => 'webwp_colors',
         'settings' => 'secondary_color',
     )));
@@ -36,16 +36,16 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_hex_color',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bg_color', array(
-        'label'    => __('Background Color', 'text-domain'),
+        'label'    => __('Background Color', 'webwp'),
         'section'  => 'webwp_colors',
         'settings' => 'bg_color',
     )));
 
     // Add Fonts Section
     $wp_customize->add_section('webwp_fonts', array(
-        'title'       => __('Typography', 'text-domain'),
+        'title'       => __('Typography', 'webwp'),
         'priority'    => 31,
-        'description' => __('Customize the fonts and sizes of your site.', 'text-domain'),
+        'description' => __('Customize the fonts and sizes of your site.', 'webwp'),
     ));
 
     // Primary Font
@@ -54,14 +54,14 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('primary_font', array(
-        'label'    => __('Primary Font (Headings)', 'text-domain'),
+        'label'    => __('Primary Font (Headings)', 'webwp'),
         'section'  => 'webwp_fonts',
         'settings' => 'primary_font',
         'type'     => 'select',
         'choices'  => array(
             'Poppins' => 'Poppins',
             'Roboto'  => 'Roboto',
-            'Custom Font' => __('Custom Font URL', 'text-domain'),
+            'Custom Font' => __('Custom Font URL', 'webwp'),
         ),
     ));
 
@@ -71,14 +71,14 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('secondary_font', array(
-        'label'    => __('Secondary Font (Body)', 'text-domain'),
+        'label'    => __('Secondary Font (Body)', 'webwp'),
         'section'  => 'webwp_fonts',
         'settings' => 'secondary_font',
         'type'     => 'select',
         'choices'  => array(
             'Poppins' => 'Poppins',
             'Roboto'  => 'Roboto',
-            'Custom Font' => __('Custom Font URL', 'text-domain'),
+            'Custom Font' => __('Custom Font URL', 'webwp'),
         ),
     ));
 
@@ -88,7 +88,7 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('base_size', array(
-        'label'    => __('Base Font Size', 'text-domain'),
+        'label'    => __('Base Font Size', 'webwp'),
         'section'  => 'webwp_fonts',
         'settings' => 'base_size',
         'type'     => 'text',
@@ -99,7 +99,7 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('content_font_size', array(
-        'label'    => __('Content Font Size', 'text-domain'),
+        'label'    => __('Content Font Size', 'webwp'),
         'section'  => 'webwp_fonts',
         'settings' => 'content_font_size',
         'type'     => 'text',
@@ -111,7 +111,7 @@ function webwp_customize_register($wp_customize)
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control('custom_font_url', array(
-        'label'    => __('Custom Font URL', 'text-domain'),
+        'label'    => __('Custom Font URL', 'webwp'),
         'section'  => 'webwp_fonts',
         'settings' => 'custom_font_url',
         'type'     => 'url',
@@ -158,7 +158,7 @@ function webwp_customizer_styles()
         body {
             font-family: var(--secondary-font);
             font-size: var(--base-size);
-            background-color: var(--bg-color);
+            // background-color: var(--bg-color);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -173,6 +173,6 @@ function webwp_customizer_styles()
             color: var(--secondary-color);
         }
     ";
-    wp_add_inline_style('theme-style', $custom_css);
+    wp_add_inline_style('webwp', $custom_css);
 }
 add_action('wp_enqueue_scripts', 'webwp_customizer_styles');
